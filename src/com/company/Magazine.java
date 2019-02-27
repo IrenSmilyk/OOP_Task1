@@ -3,28 +3,37 @@ package com.company;
 public class Magazine extends Periodical {
 
     private String genre; //жанр журнала
+    private static int count;
+    private static int count1;
 
-    public Magazine() {
+    Magazine() {
+        count++;
+
     }
 
-    public Magazine(double coast, String name, String type, String genre) {
-        super(coast, name, type);
+    Magazine(String name, String type, double coast, String genre) {
+        super(name, type, coast);
         this.genre = genre;
+        count1++;
     }
 
-    public String getGenre() {
+    static public int getCount() {
+        return count + count1;
+    }
+
+    private String getGenre() {
         return genre;
     }
 
-    public void setGenre(String genre) {
+    void setGenre(String genre) {
         this.genre = genre;
     }
 
+
     @Override
     public String toString() {
-        return "Журнал{" +
-                "Жанр='" + genre + '\'' +
-                '}';
+        return "Журнал \"" + getName() + "\": Тип журнала - " + getType() + ", Цена - " + getCoast() + ", Жанр - " + getGenre();
     }
+
 }
 

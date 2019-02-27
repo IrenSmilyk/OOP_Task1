@@ -1,9 +1,10 @@
 package com.company;
 
 abstract class Periodical {
-    private double coast;
+
     private String name;
     private String type; //бумажные или интернет издания
+    private double coast;
 
     private static int count;
     private static double sumPrice;
@@ -11,46 +12,52 @@ abstract class Periodical {
     Periodical() {
     }
 
-    Periodical(double coast, String name, String type) {
-        this.coast = coast;
+    Periodical(String name, String type, double coast) {
         this.name = name;
         this.type = type;
-    }
-
-    public double getCoast() {
-        return coast;
-    }
-
-    public void setCoast(double coast) {
         this.coast = coast;
+
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    void setName(String name) {
         this.name = name;
     }
 
-    public String getType() {
+    String getType() {
         return type;
     }
 
-    public void setType(String type) {
+    void setType(String type) {
         this.type = type;
     }
+
+   double getCoast() {
+        return coast;
+    }
+
+    void setCoast(double coast) {
+        this.coast = coast;
+    }
+
+   static int getCount() {
+        return count;
+    }
+
 
     @Override
     public String toString() {
         return "Периодическое издание{" +
-                "Название=" + name  +
+                "Название=" + name +
                 ", Тип издания='" + type + '\'' +
                 ", Цена='" + coast + '\'' +
                 '}';
     }
 
-    static public double getAverageSum(){
+    static public double getAverageSum() {
         return sumPrice / count;
     }
 }

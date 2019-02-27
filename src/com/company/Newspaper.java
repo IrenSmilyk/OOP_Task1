@@ -2,12 +2,14 @@ package com.company;
 
 public class Newspaper extends Periodical {
       private String typePeriodical; //ежедневные, еженедельные, ежемесячные
+    private static int count;
+    private static double sumPrice;
 
-    public Newspaper() {
+    Newspaper() {
     }
 
-    public Newspaper(double coast, String name, String type, String typePeriodical) {
-        super(coast, name, type);
+    public Newspaper(String name, String type, double coast, String typePeriodical) {
+        super(name, type, coast);
         this.typePeriodical = typePeriodical;
     }
 
