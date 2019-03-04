@@ -8,7 +8,6 @@ public class Magazine extends Periodical {
 
     Magazine() {
         count++;
-
     }
 
     Magazine(String name, String type, double coast, String genre) {
@@ -29,10 +28,9 @@ public class Magazine extends Periodical {
         this.genre = genre;
     }
 
-
     @Override
     public String toString() {
-        return "Журнал \"" + getName() + "\": Тип журнала - " + getType() + ", Цена - " + getCoast() + ", Жанр - " + getGenre();
+        return "Журнал: "+super.toString() + ", Жанр - " + getGenre()+ ";";
     }
 
 }

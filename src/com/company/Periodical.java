@@ -7,15 +7,20 @@ abstract class Periodical {
     private double coast;
 
     private static int count;
+    private static int count1;
+
     private static double sumPrice;
 
     Periodical() {
+        count++;
     }
 
     Periodical(String name, String type, double coast) {
         this.name = name;
         this.type = type;
         this.coast = coast;
+        count1++;
+        sumPrice+=coast;
 
     }
 
@@ -35,7 +40,7 @@ abstract class Periodical {
         this.type = type;
     }
 
-   double getCoast() {
+   private double getCoast() {
         return coast;
     }
 
@@ -44,20 +49,17 @@ abstract class Periodical {
     }
 
    static int getCount() {
-        return count;
+        return count+count1;
     }
+
 
 
     @Override
     public String toString() {
-        return "Периодическое издание{" +
-                "Название=" + name +
-                ", Тип издания='" + type + '\'' +
-                ", Цена='" + coast + '\'' +
-                '}';
+        return "Название - \'" + name + "\', Тип издания - " + type + ", Цена: " + coast;
     }
 
-    static public double getAverageSum() {
-        return sumPrice / count;
+    public static double getAverageSum() {
+        return sumPrice / (count+count1);
     }
 }
